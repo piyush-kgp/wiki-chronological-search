@@ -5,7 +5,7 @@ import chronological_search as chr
 app = flask.Flask(__name__, template_folder="templates")
 
 @app.route('/', methods=['GET'])
-def webpage():
+def deploy():
     return flask.render_template('index.html')
 
 @app.route('/search', methods = ['POST'])
