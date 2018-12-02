@@ -20,5 +20,5 @@ def search():
         return flask.jsonify({'valid_search': False, 'search_result': search_result})
 
 # app.config['TEMPLATES_AUTO_RELOAD'] = True
-# app.run('0.0.0.0', 8000, debug = True)
-app.run()
+app.run('0.0.0.0', 8000, debug = True)
+# app.run()
