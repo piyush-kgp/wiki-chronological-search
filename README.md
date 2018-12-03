@@ -4,7 +4,7 @@ This is a small project to demonstrate Wikipedia Chronological Search. It search
 
 <img src = "Screen Shot 2018-12-03 at 4.04.11 AM.png"/>
 
-The website is live at <https://wikipedia-chrnological-search.herokuapp.com/>
+The website is live at [https://wikipedia-chrnological-search.herokuapp.com/](http://54.208.200.242:8008/)
 
 ## Reproducing results
 Make sure to install dependencies and simply run this:

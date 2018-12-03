@@ -53,6 +53,9 @@ align-items: : center;
         <input type="text" name="" id="search_text">
         <button type="button" id="submit_text">Submit</button>
       </form>
+      <div id="optiondiv">
+
+      </div>
     </div>
     <div class="rcorners2" id="results" align="center" style="width:800px; margin:0 auto;">
 
@@ -64,6 +67,7 @@ align-items: : center;
       var search_text = $("#search_text").val();
       console.log(search_text);
       $("#results").html('');
+      $("#optiondiv").html('');
       $.ajax({
           url: `/search`,
           contentType: "application/json",
@@ -90,7 +94,7 @@ align-items: : center;
               }
               searches = searches + "</select>";
               console.log(searches);
-              $("#optionForm").append("<br><p align = 'left'><b>There are multiple wikipedia articles with that word. Please select an option from the dropdown.</b></p><br>" + searches);
+              $("#optiondiv").append("<br><p align = 'left'><b>There are multiple wikipedia articles with that word. Please select an option from the dropdown.</b></p><br>" + searches);
               $("#option_texts").change(function(){
                 console.log("The text has been changed.");
                 var search_text = $("#option_texts").val();
