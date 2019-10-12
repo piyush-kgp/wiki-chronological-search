@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wikipedia Chronological Ordering Demo</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+    .rcorners {
+    border-radius: 25px;
+    border: 2px solid #48DDCC;
+    padding: 20px;
+    width: 60%;
+    height: auto;
+    align-items: : center;
+}
+.rcorners2 {
+border-radius: 25px;
+border: 2px solid #48DDCC;
+padding: 20px;
+width: 60%;
+height: 1000px;
+align-items: : center;
+}
+
+
+    </style>
+  </head>
+  <body>
+    <h3 align="center">Wikipedia Chronological Search</h2>
+      <div class="rcorners" align="center" style="width:800px; margin:0 auto;">
+        <p style="font-family:courier;" align="left" >
+          This page is a demonstration of Wikipedia Chronological Search.<br>
+          Enter a text and the application will search the Wikipedia, come up with
+           a page, find top 10 important events from the page using TF-IDF and then
+           display them in reverse chronological order (Latest comes first).
+           <br>
+          <b><u> If there are multiple Wikipedia pages, you'll be asked to select one of
+          the options from a dropdown.</u></b>
+          <br>
+          Source code is publicly available at
+          <a href="https://github.com/piyush-kgp/wikipedia-chronological-search">
+            https://github.com/piyush-kgp/wikipedia-chronological-search
+          </a>
+          <br>
+          <b>Technologies used:</b>
+            <ul align="left">
+              <li>
+                <a href="https://www.python.org/">Python</a> Backend -
+                <a href="http://flask.pocoo.org/">flask</a>,
+                <a href="http://www.nltk.org/">nltk</a>,
+                <a href="https://scikit-learn.org">scikit-Learn</a>,
+                <a href="https://wikipedia.readthedocs.io/">wikipedia</a>
+              </li>
+              <li>HTML Frontend - <a href="https://jquery.com/">JQuery</a>,
+                <a href="https://www.javascript.com/">JS</a></li>
+        </ul>
+        </p>
+      </div>
+    <div class="rcorners" align="center" style="width:800px; margin:0 auto;">
+      <form id="optionForm">
+        <input type="text" name="" id="search_text">
+        <button type="button" id="submit_text">Submit</button>
+      </form>
+      <div id="optiondiv">
+
+      </div>
+    </div>
+    <div class="rcorners2" id="results" align="center" style="width:800px; margin:0 auto;">
+
+    </div>
+  </body>
+  <script type="text/javascript" src="static/myScript.js">
+  </script>
+</html>

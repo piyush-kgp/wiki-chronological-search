@@ -1,0 +1,7 @@
+Flask
+nltk
+scikit-learn
+wikipedia
+numpy
+pandas
+datefinder
