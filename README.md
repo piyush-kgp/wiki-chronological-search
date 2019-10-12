@@ -1,40 +1,32 @@
 # Wikipedia Chronological Search
 
-This is a small project to demonstrate Wikipedia Chronological Search. It searches Wikipedia for a search term, comes up with a page, finds events from the page and sorts these events by importance using TF-IDF and then shows the top 10 results sorted by chronological order (Latest comes last). If there are multiple Wikipedia pages, you'll be asked to select one of the options from a dropdown.
+This is a small project to demonstrate Wikipedia Chronological Search.
 
-<img src = "Screen Shot 2018-12-03 at 4.04.11 AM.png"/>
+It lets you search for a person on Wikipedia, comes up with the page you want, finds top 10 important events in their life and displays them chronologically.
 
-The website is live at [http://chronologically.pythonanywhere.com/](http://chronologically.pythonanywhere.com/)
+### Update (12/10/2019):
+<b> The application is live at <u><https://search-wiki-chrono.herokuapp.com>
+</u></b>
 
-## Reproducing results
-Make sure to install dependencies and simply run this:
 
-```python app.py```
+<img src = "Screenshot 2019-10-12 at 12.50.18 PM.png"/>
 
-## Dependencies
+
+## Running on your own machine
 ```
-Flask
-nltk
-scikit-learn
-wikipedia
-numpy
-pandas
-datefinder
+docker run -d -p 8000:8000 piyushkgp/wiki-chrono
 ```
+Go over to <http://localhost:8000> and you should see the application
+running.
 
-### Built with
-  <ul align="left">
-    <li>
-      <a href="https://www.python.org/">Python</a> Backend - <a href="http://flask.pocoo.org/">Flask</a>, <a href="http://www.nltk.org/">NLTK</a>, <a href="https://scikit-learn.org">Scikit-Learn</a>,   <a href="https://wikipedia.readthedocs.io/">Wikipedia</a></li>
-    <li>HTML Frontend - <a href="https://jquery.com/">JQuery</a>, <a href="https://www.javascript.com/">JS</a></li>
-</ul>
-
-
-## Deployment on pythonanywhere:
+## Local development
 ```
 git clone https://github.com/piyush-kgp/wikipedia-chronological-search
 cd wikipedia-chronological-search
-pip3 install -r requirements.txt
-python3 -c "import nltk; nltk.download('punkt')"
+python3 -m virtualenv venv
+source venv/bin/activate
+pip install -r requirements.txt
+python app.py
 ```
-After this, set your web-app path to ~/wikipedia-chronological-search/app.py. Also comment the last line (`app.run`).
+## Heroku Deployment
+[Heroku](http://heroku.com) offers free deployment of containerzied applications. The Heroku version of this application is in `heroku` branch (slightly different directory structure and uses `gunicorn`).

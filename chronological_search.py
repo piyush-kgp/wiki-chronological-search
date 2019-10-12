@@ -13,8 +13,15 @@ def wiki_search(search_term):
     except w.exceptions.DisambiguationError as e:
         return e.options
 
+def verify_nltk_files():
+    try:
+        nltk.data.find('tokenizers/punkt.zip')
+    except LookupError:
+        nltk.download("punkt")
+
 def clean_content(content):
     # cleans wikipedia content
+    verify_nltk_files()
     lines = [line.rstrip() for line in nltk.sent_tokenize(content)]
     lines = [re.sub(r'=[0-9a-zA-Z_\D]*=', r'', line) for line in lines]
     lines = [re.sub(r'===a-zA-Z===', r'', line) for line in lines]
@@ -47,7 +54,7 @@ def get_event_df(wiki_page, n = 10):
     events, dates = validate_event(lines)
     top_events, top_years = get_top_events(events, dates, tfidf_vectorizer=tfidf_vectorizer, num_events = n)
     edf = pd.DataFrame({'Year': top_years, 'Event': top_events})
-    edf = edf.sort_values(by='Year').reset_index(drop=True)
+    edf = edf.sort_values(by='Year', ascending=False).reset_index(drop=True)
     with pd.option_context('display.max_colwidth', -1):
             return edf.to_html(index=False, na_rep='-')
 
