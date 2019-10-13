@@ -1,4 +1,7 @@
 Flask
+Jinja2
+Werkzeug
+gunicorn
 nltk
 scikit-learn
 wikipedia
